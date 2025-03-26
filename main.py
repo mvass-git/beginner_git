@@ -23,6 +23,15 @@ class LikeApp(App):
 
         self.mainBox.add_widget(btn_layout)
 
+        btn_like.bind(on_press=self.like)
+        btn_dislike.bind(on_press=self.dislike)
+
         return self.mainBox
+
+    def like(self, btn):
+        print('liked')
+    
+    def dislike(self, btn):
+        print('disliked')
 
 LikeApp().run()
