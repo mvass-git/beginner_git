@@ -14,8 +14,10 @@ class CafeApp(App):
         self.next=Button(text="Наступна страва",font_size=33,on_press=self.change_dish) # створимо кнопку next, яка буде параметром класу
         # on_press викликає вказану функцію при натисканні обраної кнопки
         self.box_menu.add_widget(self.next) # об'єднаємо все в BoxLayout, щоб відразу відобразити
-        self.dish=Button(text=(self.list_dishes[self.number_dish]+" за ціною "+str(self.dictionary_dishes[self.list_dishes[self.number_dish]])+" грн"),font_size=33) # створимо кнопку страви
+        self.dish=Button(text=(self.list_dishes[self.number_dish]+" за ціною "+str(self.dictionary_dishes[self.list_dishes[self.number_dish]])+" грн"),
+                         font_size=33,on_press=self.select_dish) # створимо кнопку страви
         self.box_menu.add_widget(self.dish) # об'єднаємо все в BoxLayout, щоб відразу відобразити
+        self.order_amount=0
         self.order=Label(text="Загальна сума замовлення складає 0 грн",font_size=33) # текстова мітка
         self.box_menu.add_widget(self.order) # об'єднаємо все в BoxLayout
         self.previous=Button(text="Попередня страва",font_size=33,on_press=self.change_dish) # створимо кнопку назад
@@ -29,6 +31,9 @@ class CafeApp(App):
             self.number_dish=(self.number_dish-1+len(self.list_dishes))%len(self.list_dishes) # обираємо попередню страву
             # або переходимо до останньої
         self.dish.text=self.list_dishes[self.number_dish]+" за ціною "+str(self.dictionary_dishes[self.list_dishes[self.number_dish]])+" грн" # створимо кнопку страви
+    def select_dish(self,button):
+        self.order_amount+=self.dictionary_dishes[self.list_dishes[self.number_dish]] # додаємо вартість нової страви
+        self.order.text=f"Загальна сума замовлення складає {self.order_amount} грн"
     def build(self): # build функція яка наслідується від App та відповідає за створення вікна
         return self.box_menu # повертаємо те, що відображатиме вікно
 cafe=CafeApp() # створюємо об'єкт класу
