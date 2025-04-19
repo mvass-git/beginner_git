@@ -1,0 +1,14 @@
+1;beginner_git\images\baran.jpg
+2;beginner_git\images\bird.jpg
+3;beginner_git\images\cat.jpg
+4;beginner_git\images\deer.jpg
+5;beginner_git\images\dog.jpg
+6;beginner_git\images\horse.jpg
+7;beginner_git\images\laika.jpg
+8;beginner_git\images\lion.jpg
+9;beginner_git\images\monkey.jpg
+10;beginner_git\images\ostrich head.jpg
+11;beginner_git\images\retired lion.jpg
+12;beginner_git\images\smart cat.jpg
+13;beginner_git\images\something.jpg
+14;beginner_git\images\wolf.jpg
